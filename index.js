@@ -19,11 +19,7 @@ app.use(cookieParser());
 app.use("/api/v1/user", userRoute);
 // app.use("/api/v1/tweet", tweetRoute);
 
-app.get("/home", (req, res) => {
-  res.status(200).json({
-    message: "coming from backend",
-  });
-});
+("http://localhost:8080/api/v1/user/register");
 
 app.listen(process.env.PORT, () => {
   console.log(`Server listening at port ${process.env.PORT}`);
