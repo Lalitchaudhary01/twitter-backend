@@ -2,25 +2,25 @@
     "version": 2,
     "builds": [
       {
-        "src": "frontend/package.json",
+        "src": "index.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "src/**/*",
         "use": "@vercel/static-build",
         "config": {
           "distDir": "build"
         }
-      },
-      {
-        "src": "backend/api/**/*.js",
-        "use": "@vercel/node"
       }
     ],
     "routes": [
       {
         "src": "/api/(.*)",
-        "dest": "/backend/api/$1"
+        "dest": "/index.js"
       },
       {
         "src": "/(.*)",
-        "dest": "/frontend/$1"
+        "dest": "/index.html"
       }
     ]
   }
