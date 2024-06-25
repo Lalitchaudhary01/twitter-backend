@@ -16,19 +16,18 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
-
 const corsOptions = {
-  origin: process.env.CLIENT_URL || "http://localhost:3000",
+  origin: "http://localhost:3001",
   credentials: true,
 };
 app.use(cors(corsOptions));
 
-// API Routes
+//api
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/tweet", tweetRoute);
 
-const PORT = process.env.PORT || 5000;
+("http://localhost:8080/api/v1/user/register");
 
-app.listen(PORT, () => {
-  console.log(`Server listening at port ${PORT}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Server listening at port ${process.env.PORT}`);
 });
