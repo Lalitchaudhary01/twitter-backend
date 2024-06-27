@@ -17,7 +17,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 const corsOptions = {
-  origin: "http://localhost:3001",
+  origin: "http://deploy-twitter.vercel.app",
+  methods: ["POST", "GET"],
   credentials: true,
 };
 app.use(cors(corsOptions));
